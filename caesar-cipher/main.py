@@ -16,8 +16,8 @@ def caesar(start_text, shift_amount, cipher_direction):
 
 print(logo)
  
-decision='yes'
-while decision=='yes':
+decision=True
+while decision:
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))
@@ -25,7 +25,8 @@ while decision=='yes':
     shift = shift%26
   caesar(start_text=text, shift_amount=shift, cipher_direction=direction)
   
-  decision=input("Type 'yes' if you want to go again. Otherwise type 'no'.\n").lower()
-
-if decision=='no':
+  choice=input("Type 'yes' if you want to go again. Otherwise type 'no'.\n").lower()
+  if choice =='no':
+    decision=False
+if decision==False:
   print("Goodbye.")
